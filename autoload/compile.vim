@@ -54,7 +54,7 @@ endfunction
 " Edit the compilation command
 function! compile#edit_command()
     echohl compilePrompt
-    let command = input("Compile: ", b:compile_command)
+    let command = input("Compile: ", b:compile_command, "file")
     echohl Normal
     mode
 
@@ -197,7 +197,7 @@ function! compile#start(...)
     endif
 
     echohl compilePrompt
-    let command = input("Compile: ", g:compile#previous_command)
+    let command = input("Compile: ", g:compile#previous_command, "file")
     echohl Normal
     mode
 
